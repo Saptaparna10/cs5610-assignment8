@@ -10,6 +10,10 @@ module.exports = function (app) {
         secret: 'any string'
     }));
 
+    function home(req,res){
+        res.send('Welcome to whiteboard');
+    }
+
     function truncateDatabase(req, res) {
         dao.truncateDatabase()
             .then(function (status) {
@@ -111,6 +115,8 @@ module.exports = function (app) {
                 res.send(status);
             });
     }
+
+    app.get('/', home)
 
     app.post('/api/populate', populateDatabase)
     app.delete('/api/all', truncateDatabase)
