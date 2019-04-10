@@ -164,4 +164,4 @@ module.exports = {
     populateDatabase, truncateDatabase,
     createStudent, findAllStudents, findStudentById, updateStudent, deleteStudent, createQuestion,
     deleteQuestion, findAllQuestions, findQuestionById, answerQuestion, findAllAnswers, deleteAnswer, findAnswerById,
-    findAnswersByStudent,findAnswersByQuestion,findAnswersByStudentAndQuestion}
+    findAnswersByStudent,findAnswersByQuestion,findAnswersByStudentAndQuestion, updateQuestion}
