@@ -1,6 +1,8 @@
 // require express
 var express = require('express')
 var app = express();
+const path = require('path');
+
 
 // require body-parser
 var bodyParser = require('body-parser')
@@ -38,4 +40,11 @@ require('./data/services/university.service.server')(app)
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
+app.use(express.static(__dirname + '/dist/<name-of-app>'));
+
+app.get('/*', function(req,res) {
+
+    res.sendFile(path.join(__dirname+'/dist/<name-of-app>/index.html'));
 });
