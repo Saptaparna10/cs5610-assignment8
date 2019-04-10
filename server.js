@@ -22,3 +22,5 @@ require('./data/services/university.service.server')(app)
 
 
 app.listen(3000)
+
+//test
